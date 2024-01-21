@@ -89,10 +89,8 @@ export const resumeSlice = createSlice({
     ) => {
       const { field, value, type } = action.payload;
       if (type == "picture") {
-        console.log(1);
         draft.profile["picture"] = value;
       } else if (type == "removepicture") {
-        console.log(2);
         draft.profile["picture"] = value;
       } else {
         draft.profile[field] = value;

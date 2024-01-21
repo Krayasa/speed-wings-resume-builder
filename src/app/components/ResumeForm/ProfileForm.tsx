@@ -21,7 +21,6 @@ export const ProfileForm = () => {
     dispatch(changeProfile({ field, value }));
   };
   const handleProfilePictureChange = (event: ChangeEvent<HTMLInputElement>) => {
-    console.log("hit");
     const type = "picture";
     const file = event.target.files?.[0];
     const reader = new FileReader();
@@ -124,8 +123,7 @@ export const ProfileForm = () => {
                   src={`${picture}`}
                   alt="Preview"
                   className="rounded-xl"
-                  width="130"
-                  height="150"
+                  style={{ width: "130px", height: "120px" }}
                 />
               </div>
               <DeleteIconButton

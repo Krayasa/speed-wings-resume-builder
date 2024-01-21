@@ -22,6 +22,7 @@ export const ResumePDFProfile = ({
 }) => {
   const { name, email, phone, url, summary, location, picture } = profile;
   const iconProps = { email, phone, location, url };
+
   return (
     <ResumePDFSection style={{ marginTop: spacing["4"] }}>
       <View
@@ -49,27 +50,29 @@ export const ResumePDFProfile = ({
             <ResumePDFText style={{ marginTop: 20 }}>{summary}</ResumePDFText>
           )}
         </View>
-        <ResumePDFText>
-          <Image
-            src={picture}
-            style={{
-              width: 100,
-              height: 100,
-              borderRadius: 40,
-              marginLeft: spacing["1"],
-            }}
-          />
-          {/* added 2 images here because 1 works with the pdf view and 1 only works in download view */}
-          <img
-            src={picture}
-            style={{
-              width: 100,
-              height: 100,
-              borderRadius: 40,
-              marginLeft: spacing["1"],
-            }}
-          />
-        </ResumePDFText>
+
+        {picture !== "" ? (
+          <View>
+            <Image
+              src={picture}
+              style={{
+                width: 100,
+                height: 100,
+                borderRadius: 40,
+                marginLeft: spacing["1"],
+              }}
+            />
+            <img
+              src={picture}
+              style={{
+                width: 100,
+                height: 100,
+                borderRadius: 40,
+                marginLeft: spacing["1"],
+              }}
+            />{" "}
+          </View>
+        ) : null}
       </View>
 
       <View
